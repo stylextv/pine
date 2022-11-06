@@ -1,6 +1,8 @@
 package net.pine.option;
 
-public class Option {
+import net.pine.util.object.NamedObject;
+
+public class Option extends NamedObject {
 	
 	public static final Option THREADS = new Option("Threads");
 	public static final Option HASH_SIZE = new Option("Hash");
@@ -10,27 +12,12 @@ public class Option {
 			HASH_SIZE
 	};
 	
-	private String name;
-	
 	public Option(String name) {
-		this.name = name;
-	}
-	
-	
-	
-	public String getName() {
-		return name;
+		super(name);
 	}
 	
 	public static Option getOption(String name) {
-		for(Option o : OPTIONS) {
-			
-			String s = o.getName();
-			
-			if(s.equalsIgnoreCase(name)) return o;
-		}
-		
-		return null;
+		return (Option) NamedObject.probeArray(OPTIONS, name);
 	}
 	
 	public static Option[] getOptions() {

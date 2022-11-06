@@ -1,4 +1,4 @@
-package net.maple.command;
+package net.pine.command;
 
 import net.maple.util.log.LogUtil;
 import net.maple.util.text.StringUtil;

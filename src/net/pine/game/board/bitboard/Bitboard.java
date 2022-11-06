@@ -8,6 +8,18 @@ public class Bitboard {
 	public static final long EMPTY = 0;
 	public static final long FULL = -1;
 	
+	// TODO serializable object consumer?
+	public static void forEachSquare(long bb, String consumer) {
+		while(bb != EMPTY) {
+			
+			int square = firstSquare(bb);
+			
+			toggleSquare(bb, square);
+			
+			// consume square
+		}
+	}
+	
 	public static int firstSquare(long bb) {
 		return Long.numberOfTrailingZeros(bb);
 	}

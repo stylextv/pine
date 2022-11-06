@@ -102,8 +102,8 @@ public class Board {
 		return pieces.getPieceSquare(piece, index);
 	}
 	
-	public int getPieceCount(int piece) {
-		return pieces.getPieceCount(piece);
+	public int getPieceAmount(int piece) {
+		return pieces.getPieceAmount(piece);
 	}
 	
 	public int getPiece(int square) {

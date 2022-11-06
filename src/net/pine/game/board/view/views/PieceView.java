@@ -9,14 +9,14 @@ public class PieceView extends BoardView {
 	
 	private int[] pieceIndices = new int[];
 	
-	private int[] pieceCounts = new int[];
+	private int[] pieceAmounts = new int[];
 	
 	@Override
 	public void removePiece(int square, int piece) {
 		int index = pieceIndices[square];
-		int count = pieceCounts[piece]--;
+		int amount = pieceAmounts[piece]--;
 		
-		for(int i = index; i < count; i++) {
+		for(int i = index; i < amount; i++) {
 			
 			int j = pieceSquares[piece][i + 1];
 			
@@ -27,12 +27,12 @@ public class PieceView extends BoardView {
 	
 	@Override
 	public void setPiece(int square, int piece) {
-		int count = pieceCounts[piece];
+		int amount = pieceAmounts[piece];
 		
-		pieceSquares[piece][count] = square;
+		pieceSquares[piece][amount] = square;
 		
-		pieceIndices[square] = count;
-		pieceCounts[piece] = count + 1;
+		pieceIndices[square] = amount;
+		pieceAmounts[piece] = amount + 1;
 	}
 	
 	public int getPieceSquare(int piece, int index) {
@@ -43,8 +43,8 @@ public class PieceView extends BoardView {
 		return pieceIndices[square];
 	}
 	
-	public int getPieceCount(int piece) {
-		return pieceCounts[piece];
+	public int getPieceAmount(int piece) {
+		return pieceAmounts[piece];
 	}
 	
 }

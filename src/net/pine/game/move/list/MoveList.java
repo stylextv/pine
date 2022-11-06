@@ -16,6 +16,20 @@ public class MoveList {
 		moves = new int[size];
 	}
 	
+	public int nextLegalMove() {
+		
+	}
+	
+	public int nextMove() {
+		
+	}
+	
+	public void addMove(int move) {
+		moves[size] = move;
+		
+		size++;
+	}
+	
 	public void clear() {
 		size = 0;
 	}
