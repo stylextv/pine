@@ -80,6 +80,8 @@ public class Board {
 	public void setPiece(int square, int piece) {
 		removePiece(square);
 		
+		if(piece == Piece.NONE) return;
+		
 		for(BoardView view : views) {
 			
 			view.setPiece(square, piece);

@@ -5,7 +5,6 @@ public abstract class BoardProperty {
 	private int value;
 	
 	public abstract void onMoveMake(int move);
-	
 	public abstract void onMoveUnmake(int move);
 	
 	public int getValue() {

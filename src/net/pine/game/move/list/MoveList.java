@@ -1,5 +1,8 @@
 package net.pine.game.move.list;
 
+import net.pine.game.move.Move;
+import net.pine.game.move.constraint.MoveConstraint;
+
 public class MoveList {
 	
 	private static final int 
@@ -17,7 +20,7 @@ public class MoveList {
 	}
 	
 	public int nextLegalMove() {
-		
+		// use MoveConstraint and #nextMove
 	}
 	
 	public int nextMove() {

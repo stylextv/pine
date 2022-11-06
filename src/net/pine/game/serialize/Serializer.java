@@ -4,23 +4,25 @@ import java.util.HashMap;
 
 public class Serializer {
 	
-	// TODO board square serializer
+	public static final Serializer SQUARE_FILE = new Serializer(3);
+	public static final Serializer SQUARE_RANK = new Serializer(3);
+	
+	public static final Serializer SQUARE = new Serializer(SQUARE_FILE, SQUARE_RANK);
 	
 	public static final Serializer PIECE_COLOR = new Serializer(2);
-	
 	public static final Serializer PIECE_TYPE = new Serializer(3);
 	
 	public static final Serializer PIECE = new Serializer(PIECE_COLOR, PIECE_TYPE);
 	
 	public static final Serializer MOVE_TYPE = new Serializer(1);
-	
 	public static final Serializer MOVE_FLAG = new Serializer(3);
-	
 	public static final Serializer MOVE_SOURCE = new Serializer(SQUARE);
-	
 	public static final Serializer MOVE_TARGET = new Serializer(SQUARE);
+	public static final Serializer MOVE_CONTEXT = new Serializer(SQUARE);
+	public static final Serializer MOVE_CAPTURE = new Serializer(PIECE);
+	public static final Serializer MOVE_PROMOTION = new Serializer(PIECE);
 	
-	public static final Serializer MOVE = new Serializer(MOVE_TYPE, MOVE_FLAG, MOVE_SOURCE, MOVE_TARGET);
+	public static final Serializer MOVE = new Serializer(MOVE_TYPE, MOVE_FLAG, MOVE_SOURCE, MOVE_TARGET, MOVE_CONTEXT);
 	
 	private int length;
 	

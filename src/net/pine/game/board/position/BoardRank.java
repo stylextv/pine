@@ -14,7 +14,7 @@ public class BoardRank {
 	public static final int RANK_8 = 7;
 	
 	public static int fromSquare(int square) {
-		return Serializer.SQUARE.getComponent(square, Serializer.RANK);
+		return Serializer.SQUARE.getComponent(square, Serializer.SQUARE_RANK);
 	}
 	
 }

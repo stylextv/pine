@@ -14,7 +14,7 @@ public class BoardFile {
 	public static final int H_FILE = 7;
 	
 	public static int fromSquare(int square) {
-		return Serializer.SQUARE.getComponent(square, Serializer.FILE);
+		return Serializer.SQUARE.getComponent(square, Serializer.SQUARE_FILE);
 	}
 	
 }
