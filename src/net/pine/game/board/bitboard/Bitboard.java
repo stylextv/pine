@@ -50,9 +50,12 @@ public class Bitboard {
 		return xor(bb, mask);
 	}
 	
-	// TODO prevent over-/underflow
 	public static long shift(long bb, int dir) {
+		long mask = FULL;
 		
+		mask = shift(mask, -dir); // TODO prevent recursive loop, prevent over-/underflow issues in mask
+		
+		bb = intersection(bb, mask);
 		
 		return dir < 0 ? bb >>> -dir : bb << dir;
 	}

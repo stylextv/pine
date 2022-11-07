@@ -46,13 +46,23 @@ public class Serializer {
 	}
 	
 	public int getComponent(int object, Serializer s) {
+		int offset = getOffset(s);
+		int length = s.getLength();
 		
+		object = SerializeObject.shift(object, -offset);
+		
+		int mask = SerializeObject.ofMask(length);
+		
+		return SerializeObject.intersect(object, mask);
 	}
 	
+	// TODO remove previous value?
 	public int setComponent(int object, Serializer s, int value) {
 		int offset = getOffset(s);
 		
-		value 
+		value = SerializeObject.shift(value, offset);
+		
+		return SerializeObject.combine(object, value);
 	}
 	
 	private int getOffset(Serializer s) {

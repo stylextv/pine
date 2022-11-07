@@ -8,7 +8,8 @@ public class RayBitboard {
 	
 	
 	
-	public static long ofDirection(int dir) {
+	// TODO rename
+	public static long of(int square, int dir) {
 		return ;
 	}
 	
